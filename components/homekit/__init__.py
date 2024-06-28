@@ -24,7 +24,7 @@ CONFIG_SCHEMA = cv.Schema({
 }).extend(cv.COMPONENT_SCHEMA)
 
 def to_code(config):
-    cg.add_library("HomeKit-ESP8266", "8a8e1a065005e9252d728b24f96f6d0b29993f67", "https://magic.idreamshen.com/proxy/https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266.git")
+    cg.add_library("HomeKit-ESP8266", "8a8e1a065005e9252d728b24f96f6d0b29993f67", "https://github.com/Mixiaoxiao/Arduino-HomeKit-ESP8266.git")
     var = cg.new_Pvariable(config[CONF_ID])
     cg.add(var.set_setup_code(config["setup_code"]))
     cg.add(var.set_name(config["name"]))
