@@ -28,7 +28,14 @@ class HomekitClimate {
 
         auto climate_call = instance->get_bind_climate()->make_call();
 
-        if (!on) {
+        if (on) {
+            uint8_t mode = instance->get_cha_target_heater_cooler_state()->value.uint8_value;
+            if (mode == 1) {
+                climate_call.set_mode(climate::ClimateMode::CLIMATE_MODE_HEAT);
+            } else if (mode == 2) {
+                climate_call.set_mode(climate::ClimateMode::CLIMATE_MODE_COOL);
+            }
+        } else {
             climate_call.set_mode(climate::ClimateMode::CLIMATE_MODE_OFF);
         }
 
