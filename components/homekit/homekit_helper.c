@@ -79,10 +79,10 @@ homekit_accessory_t* new_switch_accessory(unsigned int id,
         .category=homekit_accessory_category_switch, 
         .services=(homekit_service_t*[]) {
             NEW_HOMEKIT_SERVICE(ACCESSORY_INFORMATION, .characteristics=(homekit_characteristic_t*[]) {
-                NEW_HOMEKIT_CHARACTERISTIC(NAME, "Switch11"),
-                NEW_HOMEKIT_CHARACTERISTIC(MANUFACTURER, "Arduino HomeKit"),
+                cha_name,
+                NEW_HOMEKIT_CHARACTERISTIC(MANUFACTURER, "DIY"),
                 NEW_HOMEKIT_CHARACTERISTIC(SERIAL_NUMBER, "0123456"),
-                NEW_HOMEKIT_CHARACTERISTIC(MODEL, "ESP8266/ESP32"),
+                NEW_HOMEKIT_CHARACTERISTIC(MODEL, "ESP8266"),
                 NEW_HOMEKIT_CHARACTERISTIC(FIRMWARE_REVISION, "1.0"),
                 NEW_HOMEKIT_CHARACTERISTIC(IDENTIFY, my_accessory_identify),
                 NULL
@@ -116,9 +116,9 @@ homekit_accessory_t* new_climate_accessory(unsigned int id,
         .services=(homekit_service_t*[]) {
             NEW_HOMEKIT_SERVICE(ACCESSORY_INFORMATION, .characteristics=(homekit_characteristic_t*[]) {
                 cha_name,
-                NEW_HOMEKIT_CHARACTERISTIC(MANUFACTURER, "idreamshen"),
+                NEW_HOMEKIT_CHARACTERISTIC(MANUFACTURER, "DIY"),
                 NEW_HOMEKIT_CHARACTERISTIC(SERIAL_NUMBER, "CL2024"),
-                NEW_HOMEKIT_CHARACTERISTIC(MODEL, "ESP32"),
+                NEW_HOMEKIT_CHARACTERISTIC(MODEL, "ESP8266"),
                 NEW_HOMEKIT_CHARACTERISTIC(FIRMWARE_REVISION, "1.0"),
                 NEW_HOMEKIT_CHARACTERISTIC(IDENTIFY, my_accessory_identify),
                 NULL
